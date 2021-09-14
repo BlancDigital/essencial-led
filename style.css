@@ -18,12 +18,14 @@
   --fs-lg: clamp(1.625rem, 1.4055rem + 1.0976vw, 2.1875rem);
   --fs-xlg: clamp(2.1875rem, 1.5234rem + 3.125vw, 3.75rem);
   --fs-xxlg: clamp(3rem, 2.2195rem + 3.9024vw, 5rem);
-  --shadow-xs: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  --shadow-md: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  --shadow-lg: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  --shadow-xs: rgba(0, 0, 0, 0.1) 0px 0.25rem 0.375rem -0.0625rem,
+    rgba(0, 0, 0, 0.06) 0px 0.125rem 0.25rem -0.0625rem;
+  --shadow-md: rgba(0, 0, 0, 0.1) 0px 0.625rem 0.9375rem -0.1875rem,
+    rgba(0, 0, 0, 0.05) 0px 0.25rem 0.375rem -0.125rem;
+  --shadow-lg: rgba(0, 0, 0, 0.1) 0px 1.25rem 1.5625rem -0.3125rem,
+    rgba(0, 0, 0, 0.04) 0px 0.625rem 0.625rem -0.3125rem;
+  --shadow-xlg: rgba(0, 0, 0, 0.1) 0px 1.25rem 1.5625rem -0.3125rem,
+    rgba(0, 0, 0, 0.04) 0px 0.625rem 0.625rem -0.3125rem;
 }
 
 /* Remove default margin */
@@ -167,8 +169,9 @@ select {
   align-content: center;
   text-align: center;
   padding: 2.5rem 1.25rem;
+  border-radius: 0.5rem;
   border-bottom: 0.125rem solid var(--clr-main-dk);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-xlg);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -181,6 +184,7 @@ select {
   font-weight: 600;
   text-transform: uppercase;
   line-height: 2;
+  letter-spacing: 0.03em;
 }
 
 .card__item p {
@@ -262,6 +266,9 @@ select {
   color: var(--clr-main-dk);
   font-size: var(--fs-xlg);
   max-width: 20ch;
+}
+.section-revolution b {
+  text-shadow: 0.125rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.2);
 }
 
 .section-cards {
