@@ -20,6 +20,15 @@
   --fs-lg: clamp(1.625rem, 1.4055rem + 1.0976vw, 2.1875rem);
   --fs-xlg: clamp(2.1875rem, 1.5234rem + 3.125vw, 3.75rem);
   --fs-xxlg: clamp(3rem, 2.2195rem + 3.9024vw, 5rem);
+
+  --shadow-xs: rgba(0, 0, 0, 0.1) 0px 0.25rem 0.375rem -0.0625rem,
+    rgba(0, 0, 0, 0.06) 0px 0.125rem 0.25rem -0.0625rem;
+  --shadow-md: rgba(0, 0, 0, 0.1) 0px 0.625rem 0.9375rem -0.1875rem,
+    rgba(0, 0, 0, 0.05) 0px 0.25rem 0.375rem -0.125rem;
+  --shadow-lg: rgba(0, 0, 0, 0.1) 0px 1.25rem 1.5625rem -0.3125rem,
+    rgba(0, 0, 0, 0.04) 0px 0.625rem 0.625rem -0.3125rem;
+  --shadow-xlg: rgba(0, 0, 0, 0.1) 0px 1.25rem 1.5625rem -0.3125rem,
+    rgba(0, 0, 0, 0.04) 0px 0.625rem 0.625rem -0.3125rem;
 }
 
 /* Remove default margin */
@@ -43,6 +52,12 @@ h4,
 h5,
 h6 {
   font-family: var(--ff-lato);
+}
+
+p {
+  letter-spacing: -0.0027777778rem;
+  font-size: 100%;
+  line-height: 1.75;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
