@@ -1,0 +1,36 @@
+// BUTTON
+.btn {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 25rem;
+  padding: 0.65em 1.2em;
+  font-size: clamp(1.25rem, 1.1524rem + 0.4878vw, 1.5rem);
+  font-weight: 600;
+  // pre-defined border to prevent layout-shift
+  color: var(--clr-white);
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--clr-main-dk);
+  border: 0.375rem solid transparent;
+  border-radius: 0.25em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0.375em 0.75em -0.125em,
+    rgba(0, 0, 0, 0.3) 0px 0.1875em 0.4375em -0.1875em;
+  transition: opacity 250ms ease-in;
+  animation: pulse-black 2s infinite;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:focus-visible {
+  border: 0.375rem solid var(--clr-black);
+  outline: none;
+  transform: scale(1.025);
+}
+
+$clr-black: #071013;
+// @include animations.pulse-anim(pulse-black, $clr-black);
