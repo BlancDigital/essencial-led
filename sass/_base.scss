@@ -7,6 +7,21 @@
   margin: 0;
 }
 
+:root {
+  --clr-white: #fff;
+  --clr-main: #4abfdd;
+  --clr-main-dk: #22889b;
+
+  --ff-lato: "Poppins", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
+
+  --fs-xs: clamp(1rem, 0.8846rem + 0.5128vw, 1.15rem);
+  --fs-md: clamp(1.3125rem, 1.1797rem + 0.625vw, 1.625rem);
+  --fs-lg: clamp(1.625rem, 1.4055rem + 1.0976vw, 2.1875rem);
+  --fs-xlg: clamp(2.1875rem, 1.5234rem + 3.125vw, 3.75rem);
+  --fs-xxlg: clamp(3rem, 2.2195rem + 3.9024vw, 5rem);
+}
+
 /* Remove default margin */
 body,
 h1,
@@ -19,6 +34,15 @@ blockquote,
 dl,
 dd {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-lato);
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -36,7 +60,9 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  // line-height: 1.25;
+  overflow-x: hidden;
+  font-family: var(--ff-roboto);
 }
 
 /* A elements that don't have a class get default styles */
@@ -73,4 +99,14 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.section-center {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.clr-main {
+  color: var(--clr-main);
 }
