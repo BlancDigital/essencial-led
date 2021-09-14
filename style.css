@@ -7,6 +7,19 @@
   margin: 0;
 }
 
+:root {
+  --clr-white: #fff;
+  --clr-main: #4abfdd;
+  --clr-main-dk: #22889b;
+  --ff-lato: "Poppins", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
+  --fs-xs: clamp(1rem, 0.8846rem + 0.5128vw, 1.15rem);
+  --fs-md: clamp(1.3125rem, 1.1797rem + 0.625vw, 1.625rem);
+  --fs-lg: clamp(1.625rem, 1.4055rem + 1.0976vw, 2.1875rem);
+  --fs-xlg: clamp(2.1875rem, 1.5234rem + 3.125vw, 3.75rem);
+  --fs-xxlg: clamp(3rem, 2.2195rem + 3.9024vw, 5rem);
+}
+
 /* Remove default margin */
 body,
 h1,
@@ -19,6 +32,15 @@ blockquote,
 dl,
 dd {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-lato);
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -36,7 +58,8 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  overflow-x: hidden;
+  font-family: var(--ff-roboto);
 }
 
 /* A elements that don't have a class get default styles */
@@ -74,25 +97,88 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.section-center {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.clr-main {
+  color: var(--clr-main);
+}
+
+.btn {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 25rem;
+  padding: 0.65em 1.2em;
+  font-size: clamp(1.25rem, 1.1524rem + 0.4878vw, 1.5rem);
+  font-weight: 600;
+  color: var(--clr-white);
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--clr-main-dk);
+  border: 0.375rem solid transparent;
+  border-radius: 0.25em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0.375em 0.75em -0.125em, rgba(0, 0, 0, 0.3) 0px 0.1875em 0.4375em -0.1875em;
+  transition: opacity 250ms ease-in;
+  animation: pulse-black 2s infinite;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:focus-visible {
+  border: 0.375rem solid var(--clr-black);
+  outline: none;
+  transform: scale(1.025);
+}
+
 .section-hero {
   position: relative;
   background-image: url("./public/images/hero.png");
   background-size: cover;
   background-position-x: center;
   background-position-y: top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 90vh;
 }
 .section-hero .section-center {
   position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  text-align: center;
 }
 .section-hero img {
   margin: 0 auto;
   max-width: 400px;
 }
+.section-hero .hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.section-hero h1 {
+  color: var(--clr-white);
+  font-size: var(--fs-xxlg);
+  font-weight: 900;
+}
 .section-hero p {
+  font-size: var(--fs-md);
   color: white;
+}
+.section-hero .btn {
+  margin: 0 auto;
 }
 
 .section-hero::after {
@@ -103,7 +189,19 @@ select {
   width: 100%;
   height: 100%;
   background-color: #000;
-  opacity: 0.4;
+  opacity: 0.6;
+}
+
+.section-revolution {
+  text-align: center;
+  background-color: var(--clr-main-dk);
+  padding: 5.5vh 0 0 0;
+}
+.section-revolution h2 {
+  font-family: var(--ff-roboto);
+  font-weight: 400;
+  color: var(--clr-white);
+  font-size: var(--fs-xlg);
 }
 
 /*# sourceMappingURL=style.css.map */
