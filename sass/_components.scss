@@ -34,3 +34,49 @@
 
 $clr-black: #071013;
 // @include animations.pulse-anim(pulse-black, $clr-black);
+
+// CARDS BLOCK
+
+.cards {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1.5em;
+}
+
+.cards__item {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1em;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border-bottom: 0.125rem solid var(--clr-main-dk);
+  box-shadow: var(--shadow-xlg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cards__item:hover {
+  transform: scale(1.03);
+}
+
+.cards__item h3 {
+  font-family: var(--ff-roboto);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 2;
+  letter-spacing: 0.03em;
+}
+
+.card__item p {
+  font-weight: 300;
+}
+
+.cards__item .img-wrapper {
+  width: 100%;
+  height: auto;
+}
