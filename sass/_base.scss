@@ -14,6 +14,8 @@
 
   --ff-lato: "Poppins", sans-serif;
   --ff-roboto: "Roboto", sans-serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+  --ff-caveat: "Caveat", cursive;
 
   --fs-xs: clamp(1rem, 0.8846rem + 0.5128vw, 1.15rem);
   --fs-md: clamp(1.3125rem, 1.1797rem + 0.625vw, 1.625rem);
@@ -124,4 +126,8 @@ select {
 
 .clr-main {
   color: var(--clr-main);
+}
+
+.cursive {
+  font-family: var(--ff-caveat);
 }
