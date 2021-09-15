@@ -63,7 +63,7 @@
 //
 .section-revolution {
   text-align: center;
-  background-color: var(--clr-white);
+  // background-color: var(--clr-white);
   padding: 5.5vh 0 11vh 0;
 
   .section-center {
@@ -91,18 +91,3 @@
 }
 
 // SECTION-LOCAL
-
-.section-depoimentos,
-.section-local {
-  padding: 11vh 0 11vh 0;
-
-  h4 {
-    text-align: center;
-    font-size: var(--fs-xlg);
-    // margin-bottom: -2rem;
-  }
-
-  h4 span {
-    margin-right: clamp(0rem, -0.3902rem + 1.9512vw, 1rem);
-  }
-}
