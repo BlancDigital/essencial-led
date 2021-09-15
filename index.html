@@ -78,8 +78,9 @@
     <section class="section-revolution">
       <div class="section-center">
         <h2>
-          A depilação a LED já é considerada a <b>grande evolução</b> da
-          depilação permanente.
+          A depilação a LED já é considerada a
+          <b>grande evolução</b>
+          da depilação permanente.
         </h2>
       </div>
     </section>
@@ -145,11 +146,11 @@
 
     <!-- #SECTION-LOCAL -->
     <section class="section-local section-center">
-      <h4><span class="cursive clr-main-dk">conheça a</span>CLÍNICA</h4>
+      <h4><span class="cursive clr-main-dk">conheça a sua</span>clínica</h4>
 
       <div
         class="slider"
-        data-flickity='{"wrapAround": true, "setGallerySize": false, "lazyLoad": true, "fullscreen": true}'
+        data-flickity='{"wrapAround": true, "setGallerySize": false, "lazyLoad": true, "fullscreen": true, "autoPlay": 6000}'
       >
         <div class="slider__cell">
           <img src="./public/images/int-7.jpg" alt="" />
@@ -168,7 +169,7 @@
 
     <!-- #SECTION-DEPOIMENTO -->
     <section class="section-depoimentos section-center">
-      <h4><span class="cursive clr-main-dk">depoimentos de</span> CLIENTES</h4>
+      <h4><span class="cursive clr-main-dk">depoimentos de</span> clientes</h4>
 
       <div class="depoimentos">
         <!-- start of card -->
@@ -241,48 +242,60 @@
 
     <!-- SECTION-FAQ -->
     <section class="section-faq section-center">
-      <h4><span class="cursive clr-main-dk">dúvidas</span> FREQUENTES</h4>
+      <h4><span class="cursive clr-main-dk">dúvidas</span> frequentes</h4>
       <div class="accordion-container">
         <div class="ac">
-          <h2 class="ac-header">
-            <button class="ac-trigger">Lorem ipsum dolor sit amet.</button>
-          </h2>
+          <h5 class="ac-header">
+            <button class="ac-trigger">Lorem ipsum dolor sit?</button>
+          </h5>
           <div class="ac-panel">
             <p class="ac-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste
+              praesentium voluptatum dolor delectus similique quae ipsam eum
+              possimus, aliquam modi.
             </p>
           </div>
         </div>
 
         <div class="ac">
-          <h2 class="ac-header">
-            <button class="ac-trigger">Lorem ipsum dolor sit amet.</button>
-          </h2>
+          <h5 class="ac-header">
+            <button class="ac-trigger">Lorem ipsum dolor sit?</button>
+          </h5>
           <div class="ac-panel">
             <p class="ac-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste
+              praesentium voluptatum dolor delectus similique quae ipsam eum
+              possimus, aliquam modi.
             </p>
           </div>
         </div>
 
         <div class="ac">
-          <h2 class="ac-header">
-            <button class="ac-trigger">Lorem ipsum dolor sit amet.</button>
-          </h2>
+          <h5 class="ac-header">
+            <button class="ac-trigger">Lorem ipsum dolor sit?</button>
+          </h5>
           <div class="ac-panel">
             <p class="ac-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste
+              praesentium voluptatum dolor delectus similique quae ipsam eum
+              possimus, aliquam modi.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <footer class="footer section-center">
+      <h6>Feito com 💙 por Blanc Digital</h6>
+    </footer>
+
+    <script src="./main.js"></script>
     <script src="./libs/flickity/flickity.pkgd.min.js" async defer></script>
     <script src="./libs/flickity/flickity-fullscreen.js" async defer></script>
     <script src="./libs/accordions/accordion.min.js" async defer></script>
 
-    <script>
+    <script type="module">
+      import "./libs/accordions/accordion.min.js"
       new Accordion(".accordion-container", {
         duration: 250,
         showMultiple: true,
