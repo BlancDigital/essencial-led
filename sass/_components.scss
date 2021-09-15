@@ -7,6 +7,7 @@
   width: 100%;
   max-width: 25rem;
   padding: 0.65em 1.2em;
+  font-family: var(--ff-caveat);
   font-size: clamp(1.25rem, 1.1524rem + 0.4878vw, 1.5rem);
   font-weight: 600;
   // pre-defined border to prevent layout-shift
@@ -65,18 +66,67 @@ $clr-black: #071013;
 }
 
 .cards__item h3 {
-  font-family: var(--ff-roboto);
+  font-family: var(--ff-montserrat);
   font-weight: 600;
   text-transform: uppercase;
   line-height: 2;
   letter-spacing: 0.03em;
 }
 
-.card__item p {
-  font-weight: 300;
+.cards__item p {
+  font-family: var(--ff-montserrat);
 }
 
 .cards__item .img-wrapper {
   width: 100%;
   height: auto;
+}
+
+// SLIDER
+
+.slider {
+  width: 100%;
+}
+
+/*  padding-bottom is based on the width. It calcs the padding-bottom (height)
+    based on the aspect ratio (1/2) then it multiplies by 100% to keep the ratio.
+    The max-width is 2000px.
+
+    ps: the padding-bottom is based on the WIDTH and NOT on the HEIGHT
+*/
+.slider .flickity-viewport {
+  padding-bottom: min(calc((1 / 2) * 100%), 400px);
+}
+
+.slider__cell {
+  // Added to centralize images when in fullscreen
+  top: 50%;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 300px;
+  transform: translateY(-50%);
+  margin-right: 4rem;
+  transition: box-shadow 0.2s ease;
+  border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 900px) {
+  .slider {
+    //
+    margin-top: -2rem;
+  }
+
+  .slider__cell.is-selected {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    width: 630px;
+    max-width: max-content;
+    height: 315px;
+  }
+}
+
+.slider__cell img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }
