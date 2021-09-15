@@ -6,9 +6,10 @@
   justify-content: center;
   width: 100%;
   max-width: 25rem;
-  padding: 0.65em 1.2em;
+  padding: 0.325em 0.6em;
   font-family: var(--ff-caveat);
   font-size: clamp(1.25rem, 1.1524rem + 0.4878vw, 1.5rem);
+  font-size: var(--fs-lg);
   font-weight: 600;
   // pre-defined border to prevent layout-shift
   color: var(--clr-white);
@@ -49,7 +50,7 @@ $clr-black: #071013;
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 6rem 1fr;
   gap: 1em;
   justify-items: center;
   align-content: center;
@@ -58,6 +59,7 @@ $clr-black: #071013;
   border-radius: 0.5rem;
   border-bottom: 0.125rem solid var(--clr-main-dk);
   box-shadow: var(--shadow-xlg);
+  background-color: var(--clr-white);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -98,6 +100,10 @@ $clr-black: #071013;
   padding-bottom: min(calc((1 / 2) * 100%), 400px);
 }
 
+.slider .flickity-page-dots {
+  bottom: clamp(-1.5625rem, -0.2591rem + 1.8293vw, -0.625rem);
+}
+
 .slider__cell {
   // Added to centralize images when in fullscreen
   top: 50%;
@@ -111,7 +117,8 @@ $clr-black: #071013;
   border-radius: 0.5rem;
 }
 
-@media screen and (min-width: 900px) {
+//  900px (1rem = 16px)
+@media screen and (min-width: 56.25rem) {
   .slider {
     //
     margin-top: -2rem;
@@ -129,4 +136,80 @@ $clr-black: #071013;
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
+}
+
+// DEPOIMENTO
+
+.depoimentos {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5em;
+}
+
+.depoimentos.flickity-viewport {
+  padding: 0;
+}
+
+.depoimento {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+  gap: 1em;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border-bottom: 0.125rem solid var(--clr-main-dk);
+  box-shadow: var(--shadow-xlg);
+  background-color: var(--clr-white);
+  transition: transform 0.2s ease-in-out;
+
+  .stars {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img + img {
+    margin-left: 0.25rem;
+  }
+
+  .title {
+    font-size: var(--fs-md);
+    text-transform: uppercase;
+    color: var(--clr-main-dk);
+    text-align: left;
+  }
+
+  .desc {
+    font-weight: 300;
+    text-align: left;
+  }
+
+  .author {
+    padding-top: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}
+
+// ACCORDIONS
+
+.ac.ac-trigger {
+  padding: 1.5rem;
+}
+
+.ac.ac-trigger:focus {
+  color: default;
 }
