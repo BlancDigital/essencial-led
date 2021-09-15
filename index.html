@@ -31,8 +31,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&family=Roboto:wght@100;300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&family=Montserrat:wght@200;400;600&family=Roboto:wght@100;300;400;500;700&family=Caveat&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="./libs/flickity/flickity.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
     <title>Document</title>
   </head>
@@ -84,7 +90,7 @@
           />
 
           <div class="cards__item__text">
-            <h3>Para todos os tipos de pele</h3>
+            <h3>Todos os tipos de pele</h3>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure,
               aliquid.
@@ -130,5 +136,54 @@
         <!-- end of card -->
       </div>
     </section>
+
+    <!-- #SECTION-LOCAL -->
+    <section class="section-local section-center">
+      <h4><span class="cursive clr-main">conheça</span> a clínica</h4>
+
+      <div
+        class="slider"
+        data-flickity='{"wrapAround": true, "setGallerySize": false, "lazyLoad": true, "fullscreen": true}'
+      >
+        <div class="slider__cell">
+          <img src="./public/images/int-7.jpg" alt="" />
+        </div>
+        <div class="slider__cell">
+          <img src="./public/images/int-7.jpg" alt="" />
+        </div>
+        <div class="slider__cell">
+          <img src="./public/images/int-7.jpg" alt="" />
+        </div>
+        <div class="slider__cell">
+          <img src="./public/images/int-7.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- #SECTION-DEPOIMENTO -->
+    <section class="section-depoimentos section-center">
+      <h4><span class="cursive clr-main">depoimentos</span> de clientes</h4>
+
+      <div
+        class="slider"
+        data-flickity='{"wrapAround": true, "setGallerySize": false, "lazyLoad": true, "fullscreen": true}'
+      >
+        <div class="slider__cell">
+          <img src="./public/images/int-7.jpg" alt="" />
+        </div>
+        <div class="slider__cell">
+          <img src="./public/images/int-7.jpg" alt="" />
+        </div>
+        <div class="slider__cell">
+          <img src="./public/images/int-7.jpg" alt="" />
+        </div>
+        <div class="slider__cell">
+          <img src="./public/images/int-7.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <script src="./libs/flickity/flickity.pkgd.min.js" async defer></script>
+    <script src="./libs/flickity/flickity-fullscreen.js" async defer></script>
   </body>
 </html>
