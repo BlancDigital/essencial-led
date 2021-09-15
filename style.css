@@ -13,6 +13,8 @@
   --clr-main-dk: #22889b;
   --ff-lato: "Poppins", sans-serif;
   --ff-roboto: "Roboto", sans-serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+  --ff-caveat: "Caveat", cursive;
   --fs-xs: clamp(1rem, 0.8846rem + 0.5128vw, 1.15rem);
   --fs-md: clamp(1.3125rem, 1.1797rem + 0.625vw, 1.625rem);
   --fs-lg: clamp(1.625rem, 1.4055rem + 1.0976vw, 2.1875rem);
@@ -121,6 +123,10 @@ select {
   color: var(--clr-main);
 }
 
+.cursive {
+  font-family: var(--ff-caveat);
+}
+
 .btn {
   display: flex;
   gap: 0.5em;
@@ -129,6 +135,7 @@ select {
   width: 100%;
   max-width: 25rem;
   padding: 0.65em 1.2em;
+  font-family: var(--ff-caveat);
   font-size: clamp(1.25rem, 1.1524rem + 0.4878vw, 1.5rem);
   font-weight: 600;
   color: var(--clr-white);
@@ -180,20 +187,64 @@ select {
 }
 
 .cards__item h3 {
-  font-family: var(--ff-roboto);
+  font-family: var(--ff-montserrat);
   font-weight: 600;
   text-transform: uppercase;
   line-height: 2;
   letter-spacing: 0.03em;
 }
 
-.card__item p {
-  font-weight: 300;
+.cards__item p {
+  font-family: var(--ff-montserrat);
 }
 
 .cards__item .img-wrapper {
   width: 100%;
   height: auto;
+}
+
+.slider {
+  width: 100%;
+}
+
+/*  padding-bottom is based on the width. It calcs the padding-bottom (height)
+    based on the aspect ratio (1/2) then it multiplies by 100% to keep the ratio.
+    The max-width is 2000px.
+
+    ps: the padding-bottom is based on the WIDTH and NOT on the HEIGHT
+*/
+.slider .flickity-viewport {
+  padding-bottom: min(calc((1 / 2) * 100%), 400px);
+}
+
+.slider__cell {
+  top: 50%;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 300px;
+  transform: translateY(-50%);
+  margin-right: 4rem;
+  transition: box-shadow 0.2s ease;
+  border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 900px) {
+  .slider {
+    margin-top: -2rem;
+  }
+
+  .slider__cell.is-selected {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    width: 630px;
+    max-width: max-content;
+    height: 315px;
+  }
+}
+.slider__cell img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }
 
 .section-hero {
@@ -273,6 +324,20 @@ select {
 
 .section-cards {
   padding: 0 0 11vh 0;
+}
+
+.section-depoimentos,
+.section-local {
+  padding: 11vh 0 11vh 0;
+}
+.section-depoimentos h4,
+.section-local h4 {
+  text-align: center;
+  font-size: var(--fs-xlg);
+}
+.section-depoimentos h4 span,
+.section-local h4 span {
+  margin-right: clamp(0rem, -0.3902rem + 1.9512vw, 1rem);
 }
 
 /*# sourceMappingURL=style.css.map */
