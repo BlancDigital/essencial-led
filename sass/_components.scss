@@ -1,3 +1,4 @@
+@use './animations';
 // BUTTON
 .btn {
   display: flex;
@@ -21,7 +22,7 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 0.375em 0.75em -0.125em,
     rgba(0, 0, 0, 0.3) 0px 0.1875em 0.4375em -0.1875em;
   transition: opacity 250ms ease-in;
-  animation: pulse-black 2s infinite;
+  animation: pulse-main-dk 2s infinite;
 }
 
 .btn:hover {
@@ -34,8 +35,8 @@
   transform: scale(1.025);
 }
 
-$clr-black: #071013;
-// @include animations.pulse-anim(pulse-black, $clr-black);
+$clr-main-dk: #22889b;
+@include animations.pulse-anim(pulse-main-dk, $clr-main-dk);
 
 // CARDS BLOCK
 
@@ -100,9 +101,9 @@ $clr-black: #071013;
   padding-bottom: min(calc((1 / 2) * 100%), 400px);
 }
 
-.slider .flickity-page-dots {
-  bottom: clamp(-1.5625rem, -0.2591rem + 1.8293vw, -0.625rem);
-}
+// .slider .flickity-page-dots {
+//   bottom: clamp(-1.5625rem, -0.2591rem + 1.8293vw, -0.625rem);
+// }
 
 .slider__cell {
   // Added to centralize images when in fullscreen
@@ -206,10 +207,18 @@ $clr-black: #071013;
 
 // ACCORDIONS
 
-.ac.ac-trigger {
-  padding: 1.5rem;
+.ac .ac-header.ac-header {
+  font-size: var(--fs-xs);
 }
 
-.ac.ac-trigger:focus {
-  color: default;
+.ac .ac-trigger.ac-trigger::after {
+  color: var(--clr-main-dk);
+}
+.ac .ac-trigger.ac-trigger:focus {
+  color: #000;
+}
+
+.ac .ac-panel .ac-text.ac-text,
+.ac .ac-trigger.ac-trigger {
+  padding: 1.5rem;
 }
