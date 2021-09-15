@@ -40,6 +40,12 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
+    <link
+      rel="preload"
+      href="./libs/accordions/accordion.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -139,7 +145,7 @@
 
     <!-- #SECTION-LOCAL -->
     <section class="section-local section-center">
-      <h4><span class="cursive clr-main">conheça</span> a clínica</h4>
+      <h4><span class="cursive clr-main-dk">conheça a</span>CLÍNICA</h4>
 
       <div
         class="slider"
@@ -162,28 +168,125 @@
 
     <!-- #SECTION-DEPOIMENTO -->
     <section class="section-depoimentos section-center">
-      <h4><span class="cursive clr-main">depoimentos</span> de clientes</h4>
+      <h4><span class="cursive clr-main-dk">depoimentos de</span> CLIENTES</h4>
 
-      <div
-        class="slider"
-        data-flickity='{"wrapAround": true, "setGallerySize": false, "lazyLoad": true, "fullscreen": true}'
-      >
-        <div class="slider__cell">
-          <img src="./public/images/int-7.jpg" alt="" />
+      <div class="depoimentos">
+        <!-- start of card -->
+        <div class="depoimento">
+          <div class="stars">
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+          </div>
+
+          <div class="depoimento__text">
+            <p class="title">Lorem ipsum dolor sit.</p>
+            <p class="desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+              quidem facere delectus voluptatum natus! Numquam nihil pariatur
+              quis iste dolor?
+            </p>
+            <p class="author">Lorem ipsum dolor sit.</p>
+          </div>
         </div>
-        <div class="slider__cell">
-          <img src="./public/images/int-7.jpg" alt="" />
+        <!-- end of depoimento -->
+
+        <!-- start of depoimento -->
+        <div class="depoimento">
+          <div class="stars">
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+          </div>
+
+          <div class="depoimento__text">
+            <p class="title">Lorem ipsum dolor sit.</p>
+            <p class="desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+              quidem facere delectus voluptatum natus! Numquam nihil pariatur
+              quis iste dolor?
+            </p>
+            <p class="author">Lorem ipsum dolor sit.</p>
+          </div>
         </div>
-        <div class="slider__cell">
-          <img src="./public/images/int-7.jpg" alt="" />
+        <!-- end of depoimento -->
+
+        <!-- start of depoimento -->
+        <div class="depoimento">
+          <div class="stars">
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+            <img src="./public/images/star.svg" width="28" height="28" alt="" />
+          </div>
+
+          <div class="depoimento__text">
+            <p class="title">Lorem ipsum dolor sit.</p>
+            <p class="desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+              quidem facere delectus voluptatum natus! Numquam nihil pariatur
+              quis iste dolor?
+            </p>
+            <p class="author">Lorem ipsum dolor sit.</p>
+          </div>
         </div>
-        <div class="slider__cell">
-          <img src="./public/images/int-7.jpg" alt="" />
+        <!-- end of depoimento -->
+      </div>
+    </section>
+
+    <!-- SECTION-FAQ -->
+    <section class="section-faq section-center">
+      <h4><span class="cursive clr-main-dk">dúvidas</span> FREQUENTES</h4>
+      <div class="accordion-container">
+        <div class="ac">
+          <h2 class="ac-header">
+            <button class="ac-trigger">Lorem ipsum dolor sit amet.</button>
+          </h2>
+          <div class="ac-panel">
+            <p class="ac-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <div class="ac">
+          <h2 class="ac-header">
+            <button class="ac-trigger">Lorem ipsum dolor sit amet.</button>
+          </h2>
+          <div class="ac-panel">
+            <p class="ac-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <div class="ac">
+          <h2 class="ac-header">
+            <button class="ac-trigger">Lorem ipsum dolor sit amet.</button>
+          </h2>
+          <div class="ac-panel">
+            <p class="ac-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <script src="./libs/flickity/flickity.pkgd.min.js" async defer></script>
     <script src="./libs/flickity/flickity-fullscreen.js" async defer></script>
+    <script src="./libs/accordions/accordion.min.js" async defer></script>
+
+    <script>
+      new Accordion(".accordion-container", {
+        duration: 250,
+        showMultiple: true,
+      })
+    </script>
   </body>
 </html>
