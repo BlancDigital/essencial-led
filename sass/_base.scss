@@ -9,8 +9,8 @@
 
 :root {
   --clr-white: #fff;
-  --clr-main: #4abfdd;
-  --clr-main-dk: #22889b;
+  --clr-main: #42bbc5;
+  --clr-main-dk: #077f82;
 
   --ff-lato: "Poppins", sans-serif;
   --ff-roboto: "Roboto", sans-serif;
@@ -134,7 +134,7 @@ h4 {
 
 h4 span {
   display: block;
-  margin-right: clamp(0rem, -0.3902rem + 1.9512vw, 1rem);
+  margin-right: clamp(0rem, -0.1951rem + 0.9756vw, 0.5rem);
   color: #2b2b2b;
   font-size: var(--fs-xxlg);
 }
