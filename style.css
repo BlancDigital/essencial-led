@@ -9,8 +9,8 @@
 
 :root {
   --clr-white: #fff;
-  --clr-main: #4abfdd;
-  --clr-main-dk: #22889b;
+  --clr-main: #42bbc5;
+  --clr-main-dk: #077f82;
   --ff-lato: "Poppins", sans-serif;
   --ff-roboto: "Roboto", sans-serif;
   --ff-montserrat: "Montserrat", sans-serif;
@@ -127,7 +127,7 @@ h4 {
 
 h4 span {
   display: block;
-  margin-right: clamp(0rem, -0.3902rem + 1.9512vw, 1rem);
+  margin-right: clamp(0rem, -0.1951rem + 0.9756vw, 0.5rem);
   color: #2b2b2b;
   font-size: var(--fs-xxlg);
 }
@@ -242,10 +242,15 @@ h4 span {
     transform: scale(0.99);
   }
 }
+.btn--section {
+  margin: 0 auto;
+  margin-top: 11vh;
+}
+
 .cards {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 1.5em;
 }
 
@@ -354,10 +359,9 @@ h4 span {
   text-align: center;
   padding: 2.5rem 1.25rem;
   border-radius: 0.5rem;
-  border-bottom: 0.125rem solid var(--clr-main-dk);
-  box-shadow: var(--shadow-xlg);
   background-color: var(--clr-white);
   transition: transform 0.2s ease-in-out;
+  transition: box-shadow 0.25s cubic-bezier(0.62, 0.3, 0.83, 0.67);
 }
 .depoimento .stars {
   width: 80%;
@@ -387,6 +391,14 @@ h4 span {
   font-weight: 600;
   text-align: left;
   text-transform: uppercase;
+}
+
+.depoimento:hover {
+  box-shadow: var(--shadow-xs);
+}
+
+.ac {
+  box-shadow: var(--shadow-xs);
 }
 
 .ac .ac-header.ac-header {
@@ -425,17 +437,18 @@ h4 span {
   z-index: 3;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
   text-align: center;
 }
-.section-hero img {
+.section-hero .logo {
+  max-width: clamp(6.25rem, 5.0305rem + 6.0976vw, 9.375rem);
   margin: 0 auto;
-  max-width: 400px;
+  margin-bottom: 1rem;
 }
 .section-hero .hero__text {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 4rem;
 }
 .section-hero h1 {
   color: var(--clr-white);
@@ -486,7 +499,7 @@ h4 span {
 
 .footer {
   text-align: center;
-  padding: 11vh 0 2.75vh 0;
+  padding: 5.5vh 0 2.75vh 0;
 }
 .footer h6 {
   font-size: var(--fs-xs);
