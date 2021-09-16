@@ -38,12 +38,16 @@
 $clr-main-dk: #22889b;
 @include animations.pulse-anim(pulse-main-dk, $clr-main-dk);
 
+.btn--section {
+  margin: 0 auto;
+  margin-top: 11vh;
+}
 // CARDS BLOCK
 
 .cards {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 1.5em;
 }
 
@@ -164,8 +168,6 @@ $clr-main-dk: #22889b;
   text-align: center;
   padding: 2.5rem 1.25rem;
   border-radius: 0.5rem;
-  border-bottom: 0.125rem solid var(--clr-main-dk);
-  box-shadow: var(--shadow-xlg);
   background-color: var(--clr-white);
   transition: transform 0.2s ease-in-out;
 
@@ -203,9 +205,19 @@ $clr-main-dk: #22889b;
     text-align: left;
     text-transform: uppercase;
   }
+
+  transition: box-shadow 0.25s cubic-bezier(0.62, 0.3, 0.83, 0.67);
+}
+
+.depoimento:hover {
+  box-shadow: var(--shadow-xs);
 }
 
 // ACCORDIONS
+
+.ac {
+  box-shadow: var(--shadow-xs);
+}
 
 .ac .ac-header.ac-header {
   font-size: var(--fs-xs);
