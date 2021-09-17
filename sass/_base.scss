@@ -31,6 +31,10 @@
     rgba(0, 0, 0, 0.04) 0px 0.625rem 0.625rem -0.3125rem;
   --shadow-xlg: rgba(0, 0, 0, 0.1) 0px 1.25rem 1.5625rem -0.3125rem,
     rgba(0, 0, 0, 0.04) 0px 0.625rem 0.625rem -0.3125rem;
+
+  --select-border: rgb(170, 170, 170);
+  --select-focus: var(--clr-bronze);
+  --select-arrow: var(--select-border);
 }
 
 /* Remove default margin */
@@ -57,9 +61,9 @@ h6 {
 }
 
 p {
-  letter-spacing: -0.0027777778rem;
   font-size: 100%;
   line-height: 1.75;
+  letter-spacing: -0.0027777778rem;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -90,8 +94,8 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -111,9 +115,9 @@ select {
   *,
   *::before,
   *::after {
+    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -125,18 +129,18 @@ section {
 }
 
 h4 {
-  text-align: center;
-  font-size: var(--fs-xlg);
   font-family: var(--ff-montserrat);
+  font-size: var(--fs-xlg);
   font-weight: 300;
+  text-align: center;
   // margin-bottom: -2rem;
 }
 
 h4 span {
   display: block;
   margin-right: clamp(0rem, -0.1951rem + 0.9756vw, 0.5rem);
-  color: #2b2b2b;
   font-size: var(--fs-xxlg);
+  color: #2b2b2b;
 }
 
 @media screen and (min-width: 600px) {
