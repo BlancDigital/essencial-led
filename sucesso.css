@@ -1,0 +1,29 @@
+body {
+  background-color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.wrapper h6 {
+  margin-bottom: 0.125em;
+  font-size: var(--fs-md);
+}
+
+.wrapper p {
+  margin-bottom: 2em;
+}
+
+.wrapper .btn {
+  align-items: center;
+  justify-content: center;
+  max-width: 10.5rem;
+  padding: 0.1em 0.2em;
+  font-size: 1rem;
+  text-align: center;
+}
