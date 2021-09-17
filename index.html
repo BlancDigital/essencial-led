@@ -48,6 +48,12 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="exit-form__trigger" id="exitFormTrigger"></div>
+    <div
+      class="exit-form__trigger-activator"
+      id="exitFormTriggerActivator"
+    ></div>
+
     <!-- #SECTION HERO -->
     <section class="section-hero">
       <div class="section-center">
@@ -71,7 +77,7 @@
           </p>
         </div>
 
-        <button class="btn">Ganhe uma sessão de graça</button>
+        <button class="btn btn--cta">Ganhe uma sessão de graça</button>
       </div>
     </section>
 
@@ -144,7 +150,9 @@
         <!-- end of card -->
       </div>
 
-      <button class="btn btn--section">Ganhe uma sessão de graça</button>
+      <button class="btn btn--section btn--cta">
+        Ganhe uma sessão de graça
+      </button>
     </section>
 
     <!-- #SECTION-LOCAL -->
@@ -153,7 +161,7 @@
 
       <div
         class="slider"
-        data-flickity='{"wrapAround": true, "setGallerySize": false, "lazyLoad": true, "fullscreen": true, "autoPlay": 6000}'
+        data-flickity='{"wrapAround": true, "setGallerySize": false, "lazyLoad": true, "autoPlay": 6000}'
       >
         <div class="slider__cell">
           <img src="./public/images/int-7-resized.jpg" alt="" />
@@ -169,7 +177,9 @@
         </div>
       </div>
 
-      <button class="btn btn--section">Ganhe uma sessão de graça</button>
+      <button class="btn btn--section btn--cta">
+        Ganhe uma sessão de graça
+      </button>
     </section>
 
     <!-- #SECTION-DEPOIMENTO -->
@@ -244,7 +254,9 @@
         <!-- end of depoimento -->
       </div>
 
-      <button class="btn btn--section">Ganhe uma sessão de graça</button>
+      <button class="btn btn--section btn--cta">
+        Ganhe uma sessão de graça
+      </button>
     </section>
 
     <!-- SECTION-FAQ -->
@@ -291,8 +303,206 @@
         </div>
       </div>
 
-      <button class="btn btn--section">Ganhe uma sessão de graça</button>
+      <button class="btn btn--section btn--cta">
+        Ganhe uma sessão de graça
+      </button>
     </section>
+
+    <div class="modal modal--main-form is-hidden" id="modal">
+      <div class="modal__image-wrapper">
+        <img src="./public/images/hero.png" alt="" />
+      </div>
+
+      <form
+        method="post"
+        action="enviar.php"
+        id="enviar"
+        name="enviar"
+        class="form"
+        autocomplete="off"
+        onsubmit="return validateForm(e)"
+      >
+        <div class="wrapper">
+          <button class="btn btn--close" type="button">&times;</button>
+
+          <h6>Pronto para construir <b>seu sonho?</b></h6>
+          <p>
+            Ficamos mais do que felizes em
+            <b>te ajudar a edificar seu objetivo</b>, mas para isso precisamos
+            de algumas informações!
+          </p>
+          <p id="alertForm" class="alert is-hidden">
+            Preencha todos os campos corretamente!
+          </p>
+          <!-- FORM__NAME -->
+          <div class="form__field-wrapper">
+            <label class="" for="name-form">Nome*</label>
+            <input
+              type="text"
+              name="name-form"
+              id="nameForm"
+              placeholder="Seu nome aqui"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__CELLPHONE -->
+          <div class="form__field-wrapper">
+            <label class="" for="cellphone-form">Número de celular*</label>
+            <input
+              type="tel"
+              name="cellphone-form"
+              id="cellphoneForm"
+              placeholder="Seu número aqui"
+              title="Seu número de celular com o código de área"
+              onkeypress="mascara(this)"
+              maxlength="15"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__EMAIL -->
+          <div class="form__field-wrapper">
+            <label for="email-form">Seu melhor e-mail para contato*</label>
+            <input
+              type="email"
+              name="email-form"
+              id="emailForm"
+              placeholder="email@exemplo.com"
+              required
+            />
+          </div>
+
+          <button
+            class="btn btn--submit"
+            name="submit-btn"
+            formaction="enviar.php"
+            type="submit"
+            id="enviar"
+          >
+            Ganhar minha sessão gratuita!
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- EXIT FORM -->
+
+    <div class="modal modal--exit-form is-hidden" id="modal">
+      <div class="modal__image-wrapper">
+        <img src="./public/images/hero.png" alt="" />
+      </div>
+
+      <form
+        method="post"
+        id="exitForm"
+        name="envia"
+        class="form form--exit"
+        autocomplete="off"
+      >
+        <div class="wrapper">
+          <button class="btn btn--close btn--close-exit" type="button">
+            &times;
+          </button>
+
+          <h6>VOCÊ VAI DEIXAR SUA OPORTUNIDADE DE LADO?</h6>
+          <p>
+            Alguns segundos e uma decisão podem se tornar em um
+            <b>grande investimento</b>. Porque deixar de lado sua oportunidade?
+          </p>
+          <p id="alertForm" class="alert is-hidden">
+            Preencha todos os campos corretamente!
+          </p>
+          <!-- FORM__NAME -->
+          <div class="form__field-wrapper">
+            <label class="" for="name-form">Nome*</label>
+            <input
+              type="text"
+              name="name-form"
+              id="nameForm"
+              placeholder="Seu nome aqui"
+              autocomplete="off"
+              oninput="validateName(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__CELLPHONE -->
+          <div class="form__field-wrapper">
+            <label class="" for="cellphone-form">Número de celular*</label>
+            <input
+              type="tel"
+              name="cellphone-form"
+              id="cellphoneForm"
+              placeholder="Seu número aqui"
+              title="Seu número de celular com o código de área"
+              onkeypress="mascara(this)"
+              oninput="validateNumber(this)"
+              maxlength="15"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__EMAIL -->
+          <div class="form__field-wrapper">
+            <label for="email-form">Seu melhor e-mail para contato*</label>
+            <input
+              type="email"
+              name="email-form"
+              id="emailForm"
+              placeholder="email@exemplo.com"
+              oninput="validateEmail(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__AREA -->
+          <!-- <div class="form__field-wrapper">
+            <label for="area-form"
+              >Qual a metragem da casa que você deseja construir?</label
+            >
+            <div class="form__select-wrapper">
+              <select name="area-form" id="areaForm">
+                <option value="50-100">50-100 m²</option>
+                <option value="101-250">101-250 m²</option>
+                <option value="251-500">251-500 m²</option>
+              </select>
+            </div>
+          </div> -->
+
+          <button
+            class="btn btn--submit"
+            name="submit-btn"
+            formaction="enviar.php"
+            type="submit"
+            id="enviar"
+          >
+            Ganhar minha sessão gratuita!
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="strip-banner" id="stripBanner">
+      <div class="img-wrapper">
+        <img src="./public/images/logo-icon.png" alt="" />
+      </div>
+      <!-- <label for="email-header">Insira seu e-mail</label> -->
+      <div class="information">
+        <input
+          type="text"
+          name="email"
+          id="stripEmail"
+          placeholder="Seu melhor e-mail"
+        />
+        <button class="btn btn--cta btn--strip">
+          Agendar minha sessão gratuita!
+        </button>
+      </div>
+    </div>
 
     <footer class="footer section-center">
       <h6>Feito com 💙 por Blanc Digital</h6>
@@ -300,7 +510,6 @@
 
     <script src="./main.js"></script>
     <script src="./libs/flickity/flickity.pkgd.min.js" async defer></script>
-    <script src="./libs/flickity/flickity-fullscreen.js" async defer></script>
     <script src="./libs/accordions/accordion.min.js" async defer></script>
 
     <script type="module">
