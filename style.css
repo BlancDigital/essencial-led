@@ -63,8 +63,8 @@ p {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -83,6 +83,7 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
+  -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
 }
 
@@ -108,10 +109,12 @@ select {
   }
 
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     transition-duration: 0.01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
   }
@@ -158,10 +161,31 @@ h4 span {
   font-family: var(--ff-caveat);
 }
 
+@-webkit-keyframes afl {
+  0% {
+    opacity: 0;
+    transform: translateX(-3.125rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes afl {
   0% {
     opacity: 0;
     transform: translateX(-3.125rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes afr {
+  0% {
+    opacity: 0;
+    transform: translateX(3.125rem);
   }
   100% {
     opacity: 1;
@@ -178,10 +202,30 @@ h4 span {
     transform: translateX(0);
   }
 }
+@-webkit-keyframes afb {
+  0% {
+    opacity: 0;
+    transform: translateY(3.125rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes afb {
   0% {
     opacity: 0;
     transform: translateY(3.125rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes aft {
+  0% {
+    opacity: 0;
+    transform: translateY(-3.125rem);
   }
   100% {
     opacity: 1;
@@ -198,12 +242,28 @@ h4 span {
     transform: translateY(0);
   }
 }
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes fade-out {
@@ -232,8 +292,10 @@ h4 span {
   background: var(--clr-main-dk);
   border: 0.375rem solid transparent;
   border-radius: 0.25em;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 0.375em 0.75em -0.125em, rgba(0, 0, 0, 0.3) 0px 0.1875em 0.4375em -0.1875em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0.375em 0.75em -0.125em,
+    rgba(0, 0, 0, 0.3) 0px 0.1875em 0.4375em -0.1875em;
   transition: opacity 250ms ease-in;
+  -webkit-animation: pulse-main-dk 2s infinite;
   animation: pulse-main-dk 2s infinite;
 }
 
@@ -245,6 +307,21 @@ h4 span {
   border: 0.375rem solid var(--clr-black);
   outline: none;
   transform: scale(1.025);
+}
+
+@-webkit-keyframes pulse-main-dk {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 136, 155, 0.7);
+    transform: scale(0.99);
+  }
+  70% {
+    box-shadow: 0 0 0 0.3125em rgba(34, 136, 155, 0);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 0.3125em rgba(34, 136, 155, 0);
+    transform: scale(0.99);
+  }
 }
 
 @keyframes pulse-main-dk {
@@ -344,6 +421,8 @@ h4 span {
 
   .slider__cell.is-selected {
     width: 630px;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
     max-width: max-content;
     height: 315px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
@@ -482,6 +561,7 @@ h4 span {
 }
 
 .modal__image-wrapper img {
+  -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
   border-top-left-radius: 0.5em;
@@ -516,7 +596,9 @@ h4 span {
   padding: 0;
   font-size: var(--ff-sm);
   color: var(--clr-white);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0.25em 0.375em -0.0625em, rgba(0, 0, 0, 0.06) 0px 0.125rem 0.25em -0.0625em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0.25em 0.375em -0.0625em,
+    rgba(0, 0, 0, 0.06) 0px 0.125rem 0.25em -0.0625em;
+  -webkit-animation: none;
   animation: none;
 }
 
@@ -557,6 +639,8 @@ h4 span {
   border: none;
   outline: none;
   /* A reset of styles, including removing the default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -583,6 +667,7 @@ h4 span {
   justify-self: end;
   width: 0.8em;
   height: 0.5em;
+  -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   content: "";
   background-color: var(--select-arrow);
@@ -690,7 +775,8 @@ select,
   background-position-x: center;
   background-position-y: top;
   background-size: cover;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .section-hero .section-center {
   position: relative;
@@ -780,4 +866,4 @@ select,
   display: none;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=to.css.map */
