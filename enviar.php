@@ -4,7 +4,7 @@
 $nomeremetente             = $_POST['name-form'];
 $emailremetente            = trim($_POST['email-form']);
 $telefone      	           = $_POST['cellphone-form'];
-$emaildestinatario         = 'admin@blancmarketingdigital.com.br,contato@victorh.com.br'; // Digite seu e-mail aqui, lembrando que o e-mail deve estar em seu servidor web
+$emaildestinatario         = 'leads@blancmarketingdigital.com.br,contato@essencialled.com.br'; // Digite seu e-mail aqui, lembrando que o e-mail deve estar em seu servidor web
  
  
 /* Montando a motorizado a ser enviada no corpo do e-mail. */
@@ -22,11 +22,10 @@ $headers  = "MIME-Version: 1.1\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "From: $emailremetente\r\n"; // remetente
 $headers .= "Return-Path: $emaildestinatario \r\n"; // return-path
-$envio    =  mail($emaildestinatario,"Lead JJM", $corpoHTML, $headers); 
+$envio    =  mail($emaildestinatario,"Lead Essencial LED", $corpoHTML, $headers); 
 
  if($envio) {
-
- }
    echo "<script>location.href='sucesso.html'</script>"; // Página que será redirecionada
+ }
 
 ?>
