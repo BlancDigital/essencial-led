@@ -161,6 +161,14 @@ h4 span {
   font-family: var(--ff-caveat);
 }
 
+.pt-0.pt-0.pt-0.pt-0.pt-0 {
+  padding-top: 0;
+}
+
+.pb-05.pb-05.pb-05.pb-05.pb-05 {
+  padding-bottom: 0.5rem;
+}
+
 @-webkit-keyframes afl {
   0% {
     opacity: 0;
@@ -497,6 +505,10 @@ h4 span {
 
 .ac {
   box-shadow: var(--shadow-xs);
+}
+
+.ac li + li {
+  padding-top: 0.35rem;
 }
 
 .ac .ac-header.ac-header {
