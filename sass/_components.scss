@@ -1,4 +1,4 @@
-@use './animations';
+@use "./animations";
 // BUTTON
 .btn {
   display: flex;
@@ -217,6 +217,10 @@ $clr-main-dk: #22889b;
 
 .ac {
   box-shadow: var(--shadow-xs);
+}
+
+.ac li + li {
+  padding-top: 0.35rem;
 }
 
 .ac .ac-header.ac-header {
