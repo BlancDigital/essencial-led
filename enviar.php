@@ -12,7 +12,7 @@ $emailatt_leads   = 'leads@blancmarketingdigital.com.br';
 /* =-=-=-= Informações base do e-mail (enviada para todos os destinatários) =-=-=-=*/
 $corpoHTML = '<strong>Formulário de Contato</strong>
 
-<p><b>Nome:</b>                     '.$nomeremetente.'  </p>
+<p><b>Nome:</b>                     '.$nome.'           </p>
 <p><b>E-Mail:</b>                   '.$email.'          </p>
 <p><b>Telefone:</b>                 '.$telefone.'       </p>
 <hr>';
