@@ -1,3 +1,13 @@
+<?php 
+
+      // Monitoramento de leads (pedido da gestora de trafégo)
+      $url = "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; // Capturando a url
+      $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' ); // Sanitizando a url
+
+      // A url será passada através de um input invisível (type=hidden) do formulário
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -416,6 +426,7 @@
         autocomplete="off"
         onsubmit="return validateForm(e)"
       >
+      <input type="hidden" name="url-form" value="<?php echo $escaped_url?>" />
         <div class="wrapper">
           <button class="btn btn--close" type="button">&times;</button>
 
@@ -495,6 +506,7 @@
         class="form form--exit"
         autocomplete="off"
       >
+      <input type="hidden" name="url-form" value="<?php echo $escaped_url?>" />
         <div class="wrapper">
           <button class="btn btn--close btn--close-exit" type="button">
             &times;
